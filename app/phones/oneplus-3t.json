@@ -1,0 +1,63 @@
+{
+    "additionalFeatures": "Dual SIM Dual Standby (Nano SIM + Nano SIM), NFC, DLNA, Lector de Huellas", 
+    "android": {
+        "os": "Android 9.0", 
+        "ui": "Android"
+    }, 
+    "availability": [
+        "libre" 
+       
+    ], 
+    "battery": {
+        "standbyTime": "428 hours", 
+        "talkTime": "6 hours", 
+        "type": "Li-Polymer (3400 mAH)"
+    }, 
+    "camera": {
+        "features": [
+            "Flash", 
+            "Video"
+        ], 
+        "primary": "5.0 megapixels"
+    }, 
+    "connectivity": {
+        "bluetooth": "Bluetooth 4.2", 
+        "cell": "802.11a, 802.11ac, 802.11b, 802.11g, 802.11n, 802.11n 5GHz", 
+        "gps": true, 
+        "infrared": false, 
+        "wifi": "802.11 b/g/n"
+    }, 
+    "description": "El OnePlus 3T mejora ligeramente algunos aspectos del OnePlus 3, por ejemplo el procesador. Ha sido uno de los terminales con mejor relación calidad-precio a principios del año 2017.", 
+    "display": {
+        "screenResolution": "FHD (1080 x 1920)", 
+        "screenSize": "5.5 inches", 
+        "touchScreen": true
+    }, 
+    "hardware": {
+        "accelerometer": true, 
+        "audioJack": "3.5mm", 
+        "cpu": "Qualcomm Snapdragon 821 2.35GHz", 
+        "fmRadio": false, 
+        "physicalKeyboard": false, 
+        "usb": "USB C"
+    }, 
+    "id": "oneplus-3t", 
+    "images": [
+        "https://i2.wp.com/www.pdevice.com/wp-content/uploads/2016/11/OnePlus-3T.jpg?fit=600%2C600&ssl=1", 
+        "https://www.dhresource.com/600x600/f2/albu/g5/M00/E5/D1/rBVaJFlZrliABnMhAABVqGzcQ3I310.jpg", 
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnHC017JJQ4LOXJ7bJijQsEDxx0ixs7G9tlrbLJ4tTVqmiV7bN&s"
+    ], 
+    "name": "OnePlus 3T    ", 
+    "sizeAndWeight": {
+        "dimensions": [
+            "74.7 mm (w)", 
+            "152.7 mm (h)", 
+            "7.4 mm (d)"
+        ], 
+        "weight": "158.0 grams"
+    }, 
+    "storage": {
+        "flash": "64 GB", 
+        "ram": "6 GB"
+    }
+}

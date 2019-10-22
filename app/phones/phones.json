@@ -151,5 +151,12 @@
         "imageUrl": "img/phones/motorola-charm-with-motoblur.0.jpg", 
         "name": "Motorola CHARM\u2122 with MOTOBLUR\u2122", 
         "snippet": "Motorola CHARM fits easily in your pocket or palm.  Includes MOTOBLUR service."
-    }
+    },
+    {
+        "age":2 , 
+        "id": "oneplus-3t", 
+        "imageUrl":"https://i2.wp.com/www.pdevice.com/wp-content/uploads/2016/11/OnePlus-3T.jpg?fit=600%2C600&ssl=1", 
+        "name": "OnePlus 3T", 
+        "snippet": "El OnePlus 3T mejora ligeramente algunos aspectos del OnePlus 3, por ejemplo el procesador. Ha sido uno de los terminales con mejor relación calidad-precio a principios del año 2017."
+    }   
 ]
