@@ -1,0 +1,19 @@
+
+   <div class="col-md-5"><img src="{{$ctrl.mostrar.imageUrl}}" alt="{{$ctrl.mostrar.name}}" class="phone-thumb" ng-click="$ctrl.seleccionar(phone)">
+      <div class="row text-center" >
+          {{$ctrl.mostrar.name}}
+      </div>  
+      <div class="row text-center" ng-hide="(($ctrl.mostrar.name)?false:true)">
+                Flash: {{$ctrl.mostrar.storage.flash}} MB
+                <ip-diferencia v1='{{$ctrl.mostrar.storage.flash}}' v2='{{$ctrl.comparar.storage.flash}}' mostrar='{{$ctrl.comparar.name}}'></ip-diferencia>
+                
+                  
+      </div>
+      <div class="row text-center" ng-hide="(($ctrl.mostrar.name)?false:true)">
+        Ram: {{$ctrl.mostrar.storage.ram}} MB
+        <ip-diferencia v1='{{$ctrl.mostrar.storage.ram}}' v2='{{$ctrl.comparar.storage.ram}}' mostrar='{{$ctrl.comparar.name}}'></ip-diferencia>      </div>
+      <div class="row text-center"  ng-hide="(($ctrl.mostrar.name)?false:true)"> 
+          <br/>
+            <button  class="btn btn-success" ng-click=''>Comprar</button>
+      </div>
+</div>
