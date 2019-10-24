@@ -2,7 +2,7 @@
 
 // Register `phoneDetail` component, along with its associated controller and template
 angular.
-  module('phonecatApp').
+  module('menu').
   component('menu', {
     templateUrl: 'menu/menu.template.html',
     controller: ['$routeParams',
