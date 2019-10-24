@@ -2,19 +2,29 @@
 <div class="container">
     <h1>Comparador</h1>
   <div class="row">
-   <div class="col-md-2"> Listado Moviles <br/>
+      <p>
+          Buscar:
+          <input ng-model="$ctrl.query.id" />
+        </p>
+   <div class="col-md-2"> <b>LISTADO MOVILES</b> <br/>
   
     <ul class="list-group">
-        <li class="list-group-item" ng-repeat="phone in $ctrl.phones">
+        <li class="list-group-item" ng-repeat="phone in $ctrl.phones | filter:$ctrl.query ">
           <img src="{{phone.imageUrl}}" alt="{{phone.name}}" class="phone-thumb" ng-click="$ctrl.seleccionar(phone)">
           {{phone.name}}</li>
       </ul>
   
   </div>
-  <div></div>
+  
     <phone-comparador-detail mostrar='$ctrl.phone1' comparar='$ctrl.phone2'></phone-comparador-detail>
     <phone-comparador-detail mostrar='$ctrl.phone2' comparar='$ctrl.phone1'></phone-comparador-detail>
- </div>
+ 
+    <div class="col-md-2">
+       <b> MOVILES EN LA CESTA</b> <br/>
+      <ul class="list-group">
+          <li class="list-group-item" ng-repeat="movil in $ctrl.comprarMovil() track by $index " >{{movil.id}}</li>
+      </ul>  
+    </div>
 
 </div>
 

@@ -1,0 +1,22 @@
+
+
+<div class="container">
+<h1>Lista de la compra</h1>
+
+<table class="table">
+  <thead>
+      <th>Foto</th>
+      <th>Nombre</th>
+      <th>Cantidad</th>
+      <th>Eliminar</th>
+  </thead>
+  <tbody>
+    <tr ng-repeat="movil in $ctrl.comprarMovil() track by $index">
+      <td><img src="{{movil.imageUrl}}" alt="{{movil.id}}" width="150px"></td>
+      <td>{{movil.id}}</td>
+      <td></td>
+      <td><button class="btn btn-danger">Eliminar</button></td>
+    </tr>
+  </tbody>
+  </table>
+</div>

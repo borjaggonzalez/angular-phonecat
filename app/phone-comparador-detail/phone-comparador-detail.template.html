@@ -1,13 +1,13 @@
 
 
-<div class="col-md-5 text-center"  ng-if="!$ctrl.mostrar.name">
+<div class="col-md-4 text-center"  ng-if="!$ctrl.mostrar.name">
   <h2>Seleccione 1 telefono</h2> 
   <img ng-src="https://pngimage.net/wp-content/uploads/2018/06/simbolo-telefono-movil-png-6.png" class="phone-thumb" alt="movil">
 </div>
 
 
 <div ng-if="$ctrl.mostrar.name ">
-   <div class="col-md-5"><img src="{{$ctrl.mostrar.imageUrl}}" alt="{{$ctrl.mostrar.name}}" class="phone-thumb" ng-click="$ctrl.seleccionar(phone)">
+   <div class="col-md-4"><img src="{{$ctrl.mostrar.imageUrl}}" alt="{{$ctrl.mostrar.name}}" class="phone-thumb" ng-click="$ctrl.seleccionar(phone)">
       <div class="row text-center" >
           {{$ctrl.mostrar.name}}
       </div>  
@@ -22,7 +22,7 @@
         <ip-diferencia v1='{{$ctrl.mostrar.storage.ram}}' v2='{{$ctrl.comparar.storage.ram}}' mostrar='{{$ctrl.comparar.name}}'></ip-diferencia>      </div>
       <div class="row text-center"  ng-hide="(($ctrl.mostrar.name)?false:true)"> 
           <br/>
-            <button  class="btn btn-success" ng-click="$ctrl.comprar()">Comprar</button>
+            <button  class="btn btn-success" ng-click="$ctrl.comprar(phone)">Comprar</button>
       </div>
   </div>
 </div>

@@ -10,17 +10,25 @@ angular.
       comparar:'='
       
     },
-    controller: ['$scope',
-      function PhoneComparadorController($scope) {
+    controller: ['$scope','compraMovil',
+      function PhoneComparadorController($scope,compraMovil) {
          console.trace('PhoneCompradadorDetailController');
          var self = this;
-      
+          self.cesta=[];
     
       self.comprar = function(){
         console.trace('click boton compra %o', self.mostrar  );
         $scope.$emit("eventoComprar", {
            telefono: self.mostrar
-           });
+        });
+
+      
+          console.log("movil columna 1 %o ", self.mostrar);
+       
+
+       
+        compraMovil.setProducto(self.mostrar);  
+        
 
       }
     }
