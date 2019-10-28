@@ -26,8 +26,8 @@ angular.
           console.log("movil columna 1 %o ", self.mostrar);
        
 
+        compraMovil.setProducto(self.mostrar);
        
-        compraMovil.setProducto(self.mostrar);  
         
 
       }

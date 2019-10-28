@@ -11,7 +11,7 @@
     <ul class="list-group">
         <li class="list-group-item" ng-repeat="phone in $ctrl.phones | filter:$ctrl.query ">
           <img src="{{phone.imageUrl}}" alt="{{phone.name}}" class="phone-thumb" ng-click="$ctrl.seleccionar(phone)">
-          {{phone.name}}</li>
+          {{phone.name}} - {{phone.storage.flash}}  - {{phone.storage.ram}}</li>
       </ul>
   
   </div>
@@ -22,7 +22,7 @@
     <div class="col-md-2">
        <b> MOVILES EN LA CESTA</b> <br/>
       <ul class="list-group">
-          <li class="list-group-item" ng-repeat="movil in $ctrl.comprarMovil() track by $index " >{{movil.id}}</li>
+          <li class="list-group-item" ng-repeat="(key,movil) in $ctrl.comprarMovil() " >{{movil.id}} x {{movil.cantidad}}</li>
       </ul>  
     </div>
 

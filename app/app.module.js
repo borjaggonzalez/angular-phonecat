@@ -10,5 +10,6 @@ angular.module('phonecatApp', [
   'phoneComparador',
   'phoneComparadorDetail',
   'menu',
-  'phoneCesta'
+  'phoneCesta',
+  'phoneFormulario'
 ]);

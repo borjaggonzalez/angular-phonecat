@@ -8,14 +8,15 @@
       <th>Foto</th>
       <th>Nombre</th>
       <th>Cantidad</th>
-      <th>Eliminar</th>
+      
   </thead>
   <tbody>
     <tr ng-repeat="movil in $ctrl.comprarMovil() track by $index">
-      <td><img src="{{movil.imageUrl}}" alt="{{movil.id}}" width="150px"></td>
+      <td><img src="{{movil.imagen}}" alt="{{movil.id}}" width="150px"></td>
       <td>{{movil.id}}</td>
-      <td></td>
-      <td><button class="btn btn-danger">Eliminar</button></td>
+      <td>{{movil.cantidad}}</td>
+      
+      
     </tr>
   </tbody>
   </table>

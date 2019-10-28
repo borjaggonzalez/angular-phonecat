@@ -9,13 +9,13 @@ angular.
       function PhoneComparadorController(Phone,$scope,compraMovil) {
         var self = this;
         console.trace('PhoneCompradadorController');
-        self.phones = Phone.query();
+        self.phones = {};
         self.phone1 = {};
         self.phone2 = {};
         self.selec=0;
         self.orderProp = 'age';
         
-     
+        Phone.getAll().then((res)=>self.phones=res.data);
         
         self.seleccionar = function(phone){
           self.phone2 = self.phone1;

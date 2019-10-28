@@ -16,6 +16,8 @@ angular.
         }).
         when('/cesta', {
           template: '<phone-cesta></phone-cesta>'
+        }).  when('/nuevo', {
+          template: '<formulario></formulario>'
         }).
         when('/404',{
           templateUrl:'error/404.html'
