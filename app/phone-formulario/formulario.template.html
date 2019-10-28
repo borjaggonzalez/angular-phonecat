@@ -1,18 +1,132 @@
 <h1>Nuevo Movil</h1>
 
-<form class="form" novalidate >
-        <div class="form-group">
-            <label for="idPhone"   class="col-sm-2 control-label">ID</label>
-          <div class="col-sm-10">
-          <input type="text" class="form-control" ng-model="movil.id" id="idPhone" placeholder="Id" readonly>
-        </div>
-     
-        <div class="form-group">
-                <label for="idPhone" class="col-sm-2 control-label">Nombre</label>
-                <div class="col-sm-10">
-          <input type="text" class="form-control" ng-model="movil.nombre" id="nombrePhone" placeholder="Nombre">
-        </div>
-       
-        </div>
+<form class="form-horizontal col-md-12"  name="phoneForm" novalidate >
+  <h4>Caracteristicas generales:</h4>
+  <div class="form-group" >
+    <label for="phoneId" class="col-sm-2 control-label">Modelo:</label>
+    <div class="col-sm-4" ng-class="(phoneForm.phoneId.$valid || phoneForm.$pristine)?'has-success':'has-error'">
+      <input type="text" 
+             class="form-control" 
+             id="phoneId" name="phoneId"
+             ng-model="movil.id" required placeholder="Inserte el nombre del modelo del movil">
+      <p class="help-block" ng-hide="phoneForm.phoneId.$valid || phoneForm.$pristine">
+        Este campo es necesario
+      </p>
+    </div>
+    <label for="phoneName" class="col-sm-2 control-label">Nombre:</label>
+    <div class="col-sm-4" ng-class="(phoneForm.phoneName.$valid || phoneForm.$pristine)?'has-success':'has-error'">
+      <input type="text" 
+             class="form-control" 
+             id="phoneName" name="phoneName"
+             ng-model="movil.nombre" required placeholder="Inserte el nombre del movil">
+      <p class="help-block" ng-hide="phoneForm.phoneName.$valid || phoneForm.$pristine">
+        Este campo es necesario
+      </p>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="phoneSnippeti" class="col-sm-2 control-label">Descripcion Inicial:</label>
+    <div class="col-sm-10">
+      <textarea class="form-control" ng-model="movil.snippet" rows="3" placeholder="Describa el movil"></textarea>
+    </div>
+  </div>
+  <div class="form-group">
+      <label for="phoneImg" class="col-sm-2">Inserte una imagen del Movil:</label>
+      <div class="col-sm-10">
+        <input class="form-control"  type="text" id="phoneImg" ng-model="movil.imageUrl">
+        <p class="help-block">Inserte la url de la imagen</p>
+      </div>
+    </div>
+  <hr>
+  <h4>Caracteristicas tecnicas:</h4>
+  <div class="form-group">
+      <label for="phoneRam" class="col-sm-2 control-label">RAM:</label>
+      <div class="col-sm-1 {{(phoneForm.phoneRam.$valid || phoneForm.$pristine)?'has-success':'has-error'}}">
+        <input type="number" name="phoneRam" class="form-control" id="phoneRam" required ng-model="movil.ram" placeholder="0">
+        <p class="help-block" ng-hide="phoneForm.phoneRam.$valid || phoneForm.$pristine">
+          Este campo es necesario
+        </p>
+      </div>
+      <label for="phoneFlash" class="col-sm-2 control-label">Flash:</label>
+      <div class="col-sm-1 {{(phoneForm.phoneFlash.$valid || phoneForm.$pristine)?'has-success':'has-error'}}">
+        <input type="number" name="phoneFlash" class="form-control" id="phoneFlash" required ng-model="movil.flash" placeholder="0">
+        <p class="help-block" ng-hide="phoneForm.phoneFlash.$valid || phoneForm.$pristine">
+          Este campo es necesario
+        </p>
+      </div>
+      <label for="phoneAge" class="col-sm-3 control-label">Años desde la entrada en servicio:</label>
+      <div class="col-sm-1 {{(phoneForm.phoneAge.$valid || phoneForm.$pristine)?'has-success':'has-error'}}">
+        <input type="number" name="phoneAge" class="form-control" id="phoneAge" required ng-model="movil.age" placeholder="0">
+        <p class="help-block" ng-hide="phoneForm.phoneAge.$valid || phoneForm.$pristine">
+          Este campo es necesario
+        </p>
+      </div>
+  </div>
+  <div class="form-group">
+    <label for="androidPhone" class="control-label col-sm-2">Version de Sistema Operativo:</label>
+    <div class="col-sm-4">
+        <select class="form-control" id="androidPhone" ng-model="movil.sistema" ng-change="$ctrl.change(movil.sistema)">
+            <option  ng-repeat="sistema in $ctrl.so" value="{{$index}}">{{sistema.nombre}}</option>
+        </select>
+      </div>
+      <div class="col-sm-4">
+        <select class="form-control" id="androidPhone">
+            <option ng-model="movil.android" ng-repeat="version in $ctrl.version">{{version.so}} {{version.ui}}</option>
+        </select>
+    </div>
+  </div>
+  <label for="androidPhone" class="control-label col-sm-2">Caracteristicas Extras: </label>
+  <div class="form-group col-sm-10">
+      <label class="checkbox-inline">
+          <input type="checkbox" id="inlineCheckbox1" ng-model="movil.gps" ng-value="true"> GPS
+        </label>
+        <label class="checkbox-inline">
+          <input type="checkbox" id="inlineCheckbox2" ng-model="movil.infrared" ng-value="true"> Infrared
+        </label>
+        <label class="checkbox-inline">
+          <input type="checkbox" id="inlineCheckbox3" ng-model="movil.touchScreen" ng-value="true"> Pantalla tactil
+        </label>
+        <label class="checkbox-inline">
+            <input type="checkbox" id="inlineCheckbox4" ng-model="movil.accelerometer" ng-value="true"> Acelerometro
+        </label>
+        <label class="checkbox-inline">
+            <input type="checkbox" id="inlineCheckbox5" ng-model="movil.fmRadio" ng-value="true"> Radio FM
+        </label>
+        <label class="checkbox-inline">
+            <input type="checkbox" id="inlineCheckbox6" ng-model="movil.physicalKeyboard" ng-value="true"> Teclado fisico
+        </label>
+  </div>
+  <div class="form-group">
+      <label for="phoneWifi" class="col-sm-2 control-label">Bandas de wifi:</label>
+      <div class="col-sm-2">
+        <input type="radio" name="wifi" id="phoneWifi" ng-model="movil.wifi" value="802.11a" checked > 802.11a <br>
+        <input type="radio" name="wifi" id="phoneWifi" ng-model="movil.wifi" value="802.11ac"> 802.11ac <br>
+        <input type="radio" name="wifi" id="phoneWifi" ng-model="movil.wifi" value="802.11b"> 802.11b <br>
+        <input type="radio" name="wifi" id="phoneWifi" ng-model="movil.wifi" value="802.11g"> 802.11g <br>
+        <input type="radio" name="wifi" id="phoneWifi" ng-model="movil.wifi" value="802.11n"> 802.11n <br>
+      </div>
+      <label for="phoneCell" class="col-sm-2 control-label">Bandas de frecuencia:</label>
+      <div class="col-sm-2">
+        <input type="radio" name="cell" id="phoneCell" ng-model="movil.cell" value="4G 800/1800/2600" checked > 4G 800/1800/2600 <br>
+        <input type="radio" name="cell" id="phoneCell" ng-model="movil.cell" value="3G 900/2100"> 3G 900/2100 <br>
+        <input type="radio" name="cell" id="phoneCell" ng-model="movil.cell" value="2G 900/1800"> 2G 900/1800 <br>
+        <input type="radio" name="cell" id="phoneCell" ng-model="movil.cell" value="GSM 850/900/1800/1900"> GSM 850/900/1800/1900 <br>
+        <input type="radio" name="cell" id="phoneCell" ng-model="movil.cell" value="WCDMA 850/1700/2100"> WCDMA 850/1700/2100 <br>
+      </div>
+      <label for="phoneResolution" class="col-sm-2 control-label">Resolucion de la camara:</label>
+      <div class="col-sm-2">
+        <input type="radio" name="resol" id="phoneResolution" ng-model="movil.primary" value="3.0 megapixels" checked > 3.0 megapixels <br>
+        <input type="radio" name="resol" id="phoneResolution" ng-model="movil.primary" value="5.0 megapixels"> 5.0 megapixels <br>
+        <input type="radio" name="resol" id="phoneResolution" ng-model="movil.primary" value="8.0 megapixels"> 8.0 megapixels <br>
+        <input type="radio" name="resol" id="phoneResolution" ng-model="movil.primary" value="12.0 megapixels"> 12.0 megapixels <br>
+        <input type="radio" name="resol" id="phoneResolution" ng-model="movil.primary" value="16.0 megapixels"> 16.0 megapixels <br>
+      </div>
+  </div>
+  <hr>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
         <button type="submit" ng-click="$ctrl.guardar(movil)" class="btn btn-success">Guardar</button>
+     </div>
       </form>
+
+<br>
